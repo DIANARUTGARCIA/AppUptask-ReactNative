@@ -9,12 +9,17 @@ import {
   Button,
   Text,
 } from 'native-base';
+import globalStyles from '../style/global';
+import {useNavigation} from '@react-navigation/native';
+import CrearCuenta from './CrearCuenta';
 
 const Login = () => {
+  //funcion para redireccionar
+  const navigation = useNavigation();
   return (
-    <NativeBaseProvider>
-      <View style={styles.contenido}>
-        <Heading>Login</Heading>
+    <NativeBaseProvider style={[globalStyles.contenedor]}>
+      <View style={globalStyles.contenido}>
+        <Heading style={globalStyles.titulo}>Login</Heading>
         <FormControl>
           <Stack space={5}>
             <Stack>
@@ -37,10 +42,17 @@ const Login = () => {
             </Stack>
           </Stack>
         </FormControl>
-        <Button borderRadius="full">
-          <Text>Iniciar Sesión</Text>
+
+        <Button style={globalStyles.boton} borderRadius="full">
+          <Text style={globalStyles.botontext}>Iniciar Sesión</Text>
         </Button>
-        <Text>Crear Cuenta</Text>
+
+        <Text
+          onPress={() => navigation.navigate('CrearCuenta')}
+          style={globalStyles.enlace}
+        >
+          Crear Cuenta
+        </Text>
       </View>
     </NativeBaseProvider>
   );

@@ -15,6 +15,8 @@ import {
 } from 'react-native';
 
 const App=()=>{
+
+
  
   return (
    <NavigationContainer>
@@ -32,6 +34,13 @@ const App=()=>{
          component={CrearCuenta}
          options={{
           title: "Crear Cuenta",
+          headerStyle:{
+             backgroundColor:'#000'
+          },
+          headerTintColor:'#fff',
+          headerTitleStyle:{
+            fontWeight:'bold'
+          }
          }}
       />
 
