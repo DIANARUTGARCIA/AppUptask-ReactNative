@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Login from './views/Login';
 import CrearCuenta from './views/CrearCuenta';
+import Proyectos from './views/Proyectos';
 const Stack = createNativeStackNavigator();
 import {
   SafeAreaView,
@@ -35,6 +36,20 @@ const App=()=>{
          component={CrearCuenta}
          options={{
           title: "Crear Cuenta",
+          headerStyle:{
+             backgroundColor:'#000'
+          },
+          headerTintColor:'#fff',
+          headerTitleStyle:{
+            fontWeight:'bold'
+          }
+         }}
+      />
+      <Stack.Screen
+         name="Proyectos"
+         component={Proyectos}
+         options={{
+          title: "Proyectos",
           headerStyle:{
              backgroundColor:'#000'
           },
