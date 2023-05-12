@@ -11,7 +11,7 @@ import {
 } from 'native-base';
 import globalStyles from '../style/global';
 import {useNavigation} from '@react-navigation/native';
-import CrearCuenta from './CrearCuenta';
+
 
 const Login = () => {
   //funcion para redireccionar
