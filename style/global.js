@@ -3,13 +3,19 @@ import {StyleSheet} from 'react-native';
 const globalStyles = StyleSheet.create({
   contenedor: {
     // flex: 1,
+    
   },
   contenido: {
     flexDirection: 'column',
     justifyContent: 'center',
-
     flex: 1,
     backgroundColor: '#E4E8EA',
+  },
+  contenido3:{
+    backgroundColor: '#fff',
+    paddingHorizontal: '3%',
+     marginHorizontal: '4%',
+     paddingVertical: '3%',
   },
   contenido2: {
     backgroundColor: '#fff',
@@ -41,7 +47,7 @@ const globalStyles = StyleSheet.create({
   },
   boton: {
     marginTop: 15,
-    backgroundColor: '#389BF5',
+    backgroundColor: '#0088FD',
   },
   botontext: {
     textTransform: 'uppercase',
