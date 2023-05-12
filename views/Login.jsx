@@ -13,6 +13,7 @@ import globalStyles from '../style/global';
 import {useNavigation} from '@react-navigation/native';
 //APOLLO
 import {gql, useMutation} from '@apollo/client';
+import { AsyncStorage} from '@react-native-async-storage/async-storage'
 
 const AUTENTICAR_USUARIO = gql`
   mutation autenticarUsuario($input:AutenticarInput){
@@ -48,13 +49,17 @@ const Login = () => {
           },
         },
       });
+      const {token} = data.autenticarUsuario;
+      //guardar el token
+      await AsyncStorage.setItem('token',token);
+      navigation.navigate('Proyectos')
       console.log(data);
     } catch (error) {
       
       console.log(error)
       const advertencia = error.message.replace('GraphQL error', '');
       guardarMensaje(error.message.replace('GraphQL error', ''));
-      Alert.alert('Error', `${mensaje}`, [{text: 'Ok', style: 'cancel'}]);
+      Alert.alert('Error', `${advertencia}`, [{text: 'Ok', style: 'cancel'}]);
     }
   };
   const mostrarAlerta = () => {
