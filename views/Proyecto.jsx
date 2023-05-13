@@ -118,6 +118,14 @@ const Proyecto = ({route}) => {
           <Text style={{color: '#fff'}}>Crear Tarea</Text>
         </Button>
       </View>
+      <View>
+        <Text style={globalStyles.subtitulo}>Tareas:</Text>
+        <View>
+          {data.obtenerTareas.map(tarea => (
+            <Tarea key={tarea.id} tarea={tarea} proyectoId={id} />
+          ))}
+        </View>
+      </View>
     </NativeBaseProvider>
   );
 };
