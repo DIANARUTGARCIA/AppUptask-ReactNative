@@ -22,11 +22,27 @@ const NUEVO_PROYECTO = gql`
     }
   }
 `;
+const OBTENER_PROYECTOS = gql`
+  query obtenerProyectos {
+    obtenerProyectos {
+      id
+      nombre
+    }
+  }
+`;
 
 const NuevoProyecto = () => {
   const [nombre, setNombre] = useState('');
   //apolo
-  const [nuevoProyecto] = useMutation(NUEVO_PROYECTO);
+  const [nuevoProyecto] = useMutation(NUEVO_PROYECTO, {
+    update(cache, {data: {nuevoProyecto}}) {
+      const {obtenerProyectos} = cache.readQuery({query: OBTENER_PROYECTOS});
+      cache.writeQuery({
+        query: OBTENER_PROYECTOS,
+        data: {obtenerProyectos: obtenerProyectos.concat([nuevoProyecto])},
+      });
+    },
+  });
 
   const navigation = useNavigation();
 
