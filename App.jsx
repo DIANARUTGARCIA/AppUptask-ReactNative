@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Proyecto">
         <Stack.Screen
           name="Login"
           component={Login}
@@ -65,16 +65,26 @@ const App = () => {
         <Stack.Screen
           name="Proyecto"
           component={Proyecto}
-          options={({route}) => ({
-            title: route.params.nombre,
+          options={{
+            title: 'Proyecto slkd',
             headerStyle: {
-              backgroundColor: '#28303B',
+              backgroundColor: '#000',
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
               fontWeight: 'bold',
             },
-          })}
+          }}
+          // options={({route}) => ({
+          //   title: route.params.nombre,
+          //   headerStyle: {
+          //     backgroundColor: '#28303B',
+          //   },
+          //   headerTintColor: '#fff',
+          //   headerTitleStyle: {
+          //     fontWeight: 'bold',
+          //   },
+          // })}
         />
       </Stack.Navigator>
     </NavigationContainer>

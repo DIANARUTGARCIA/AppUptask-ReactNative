@@ -34,7 +34,7 @@ const Proyectos = () => {
           <View
             style={styles.tarjeta}
             key={proyecto.id}
-            onPress={() => navigation.navigate('Proyecto,proyecto')}
+            onPress={() => navigation.navigate('Proyecto',proyecto)}
           >
             <VStack>
               <Text>{proyecto.nombre} </Text>
